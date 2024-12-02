@@ -11,7 +11,7 @@ public class Primes {
         bool_array[1] = false;
 
         // put T in all indexes > 2
-        for (int i = 2; i < bool_array.length-1 ; i++){ 
+        for (int i = 2; i < bool_array.length ; i++){ 
             bool_array[i] = true;
         }
 
