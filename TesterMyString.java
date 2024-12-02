@@ -25,19 +25,14 @@ public class TesterMyString {
         System.out.println("Testing 'contains':");
 
         boolean test1 = MyString.contains("baba yaga", "baba");
-        System.out.println("test "+ test1);
 
         boolean test2 = MyString.contains("baba yaga", "");
-        System.out.println("test "+ test2);
 
         boolean test3 = !MyString.contains("baba yaga", "John Wick is the baba yaga");
-        System.out.println("test "+ test3);
 
         boolean test4 = !MyString.contains("baba yaga", "Yaga");
-        System.out.println("test "+ test4);
 
         boolean test5 = !MyString.contains("baba yaga", "babayaga");
-        System.out.println("test "+ test5);
 
 
         int passed = (test1 ? 1 : 0) + (test2 ? 1 : 0) + (test3 ? 1 : 0) + (test4 ? 1 : 0) +
