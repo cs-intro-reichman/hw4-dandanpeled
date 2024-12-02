@@ -4,26 +4,26 @@ import java.util.Arrays;
  *  The library also features a string comparison method. */
 public class ArrCharOps {
     public static void main(String[] args) {
-        String str = "clearly";
-        char[] arr1 = {'c','l','e','a','r','l','y'};
-        char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
-        System.out.println(str);  // Prints the string
-        println(arr1);            // Prints an array of characters
-        System.out.println(charAt(arr1,2));      
-        System.out.println(indexOf(arr1,'l'));  
-        System.out.println(indexOf(arr1,'l',3)); 
-        System.out.println(lastIndexOf(arr1, 'l'));
-        System.out.println(concat(arr1, arr2));
-        System.out.println(subArray(arr2, 2, 9));
-        System.out.println(compareTo("abcd", "abcd"));
-        System.out.println(compareTo("abc", "abcd"));
-        System.out.println(compareTo("abw", "abcd"));
-        System.out.println(compareTo("Abcd", "a"));
-        System.out.println(compareTo("apple", "banana"));
-        System.out.println(compareTo("apple", "applepie"));
-        System.out.println(compareTo("Zoo", "zoo"));
+        // String str = "clearly";
+        char[] arr1 = {};
+        // char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
+        // System.out.println(str);  // Prints the string
+        // println(arr1);            // Prints an array of characters
+        // System.out.println(charAt(arr1,2));      
+        // System.out.println(indexOf(arr1,'l'));  
+        // System.out.println(indexOf(arr1,'l',3)); 
+        // System.out.println(lastIndexOf(arr1, 'l'));
+        // System.out.println(concat(arr1, arr2));
+        // System.out.println(subArray(arr2, 2, 9));
+        //System.out.println(compareTo("abc", "aBc"));
+        // System.out.println(compareTo("abc", "abcd"));
+        // System.out.println(compareTo("abw", "abcd"));
+        // System.out.println(compareTo("Abcd", "a"));
+        // System.out.println(compareTo("apple", "banana"));
+        // System.out.println(compareTo("apple", "applepie"));
+        // System.out.println(compareTo("Zoo", "zoo"));
         System.out.println(hashCode(arr1));
-        System.out.println(hashCode(arr2));
+        // System.out.println(hashCode(arr2));
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -47,8 +47,12 @@ public class ArrCharOps {
      *  returns true; Otherwise returns false.
      */
     public static boolean equals(char[] arr1, char[] arr2) {
+        if (arr1.length == 0 && arr2.length == 0){
+            return true;
+        }
+
         for (int i = 0; i < arr1.length; i++){
-            if (arr1[i] == arr2[i]){
+            if (arr1[i] != arr2[i]){
                 return false;
             }
         }
@@ -143,14 +147,25 @@ public class ArrCharOps {
      */
     public static long hashCode(char[] arr) {
         char[] arrPlay = arr;
-        int hash = 0;
+        int arrLength = arrPlay.length - 1;
+
+        long hash = 0;
+
+        if (arrPlay.length == 0){
+            hash = 0;
+            return hash;
+        }
 
         for (int i = 0; i < arrPlay.length ; i++){
-            hash = hash + arrPlay[i]*(7^(arr.length - 1));
+            long new_hash = arrPlay[i] * (long)(Math.pow(7,arrLength));
+            hash = hash + new_hash;
+
+            arrLength--;
         }
 
         return hash;
     }
+
 
     /**
      * Compares the two strings lexicographically.
@@ -182,7 +197,6 @@ public class ArrCharOps {
         if (str1 == "" || str2 == ""){
             return -2;
         }
-
         
         if (str1.length() < str2.length() ){
             for (int i = 0; i < str1.length() ; i++){
@@ -223,8 +237,9 @@ public class ArrCharOps {
                     return -1;
                 }
 
-                return 0;
             }
+            return 0;
+
         }
         return 0;
     }
