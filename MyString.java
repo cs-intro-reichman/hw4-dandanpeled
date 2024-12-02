@@ -41,21 +41,20 @@ public class MyString {
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
         
-        String str1Lower = lowerCase(str1);
-        String str2Lower = lowerCase(str2);
 
-        if (str1Lower == ""){
+        if (str1 == ""){
             return false;
-        }else if (str2Lower == ""){
+        }else if (str2 == ""){
             return true;
         }
 
-        char charToCheck = str2Lower.charAt(0);
+        char charToCheck = str2.charAt(0);
 
-        for (int j = 0; j < str1Lower.length()-1; j++){
-            if (charToCheck == str1Lower.charAt(j)) {
-                for (int i = 0; i < str2Lower.length(); i++ ){
-                    if (str2Lower.charAt(i) != str1Lower.charAt(j)) {
+        for (int j = 0; j < str1.length()-1; j++){
+            if (charToCheck == str1.charAt(j)) {
+                for (int i = 0; i < str2.length(); i++ ){
+                    if (str2.charAt(i) != str1.charAt(j)) {
+                        System.out.println("false");
                         return false;
                     }
                     j++;
