@@ -30,9 +30,11 @@ public class Primes {
             p_divider++;
         }
 
+        System.out.println("Prime numbers up to " + upper_bound + ":");
         for (int i = 2; i < bool_array.length; i++){
             if (bool_array[i] == true){
                 count_primes++;
+                System.out.println(i);
             }
         }  
 
