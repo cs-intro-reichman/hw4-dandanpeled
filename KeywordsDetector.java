@@ -23,6 +23,7 @@ public class KeywordsDetector {
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         
         for (int i = 0; i < sentences.length; i++){
+            String sentenceToCheckOriginal = sentences[i]; 
             String sentenceToCheck = lowerCase(sentences[i]); 
             //System.out.println("Sentence: " + sentenceToCheck);
 
@@ -31,7 +32,7 @@ public class KeywordsDetector {
                 //System.out.println("Keyword: " + keywordToCheck);
                 
                 if (contains(sentenceToCheck, keywordToCheck)){
-                    System.out.println(sentenceToCheck);
+                    System.out.println(sentenceToCheckOriginal);
                     break;
                 }
 
