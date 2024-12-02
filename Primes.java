@@ -21,6 +21,7 @@ public class Primes {
                     if (j == p_divider){
                         bool_array[j] = true;
                     }
+                    
                     else if (j % p_divider == 0 ){
                         bool_array[j] = false;
                     }
