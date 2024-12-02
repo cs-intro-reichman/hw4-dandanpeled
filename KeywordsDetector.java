@@ -52,10 +52,10 @@ public class KeywordsDetector {
         char charToCheck = str2.charAt(0);
         for (int j = 0; j < str1.length()-1; j++){
             if (charToCheck == str1.charAt(j)) {
-                System.out.println("Found first letter");
+                //System.out.println("Found first letter");
                 for (int i = 0; i < str2.length(); i++ ){
                     if (str2.charAt(i) != str1.charAt(j)) {
-                        System.out.println("Found not equal "+ str2.charAt(i) +" " + str1.charAt(j));
+                        //System.out.println("Found not equal "+ str2.charAt(i) +" " + str1.charAt(j));
                         break;
                     }
                     j++;

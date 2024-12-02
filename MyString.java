@@ -53,12 +53,9 @@ public class MyString {
             if (charToCheck == str1.charAt(j)) {
                 for (int i = 0; i < str2.length(); i++ ){
                     if (str2.charAt(i) != str1.charAt(j)) {
-                        break;
+                        return false;
                     }
                     j++;
-                    if (i == str2.length()-1){
-                        return true;
-                    }
                 }
                 return true;
             }
