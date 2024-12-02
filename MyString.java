@@ -40,7 +40,6 @@ public class MyString {
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        
 
         if (str1 == ""){
             return false;
@@ -54,9 +53,12 @@ public class MyString {
             if (charToCheck == str1.charAt(j)) {
                 for (int i = 0; i < str2.length(); i++ ){
                     if (str2.charAt(i) != str1.charAt(j)) {
-                        return false;
+                        break;
                     }
                     j++;
+                    if (i == str2.length()-1){
+                        return true;
+                    }
                 }
                 return true;
             }
