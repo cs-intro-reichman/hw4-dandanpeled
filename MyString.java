@@ -47,18 +47,28 @@ public class MyString {
             return true;
         }
 
-        char charToCheck = str2.charAt(0);
+        if (str2.length() > str1.length()){
+            return false;
+        }
 
+        char charToCheck = str2.charAt(0);
         for (int j = 0; j < str1.length()-1; j++){
             if (charToCheck == str1.charAt(j)) {
+               // System.out.println("Found first letter ");
                 for (int i = 0; i < str2.length(); i++ ){
                     if (str2.charAt(i) != str1.charAt(j)) {
-                        return false;
+                        //System.out.println("Found not equal "+ str2.charAt(i) +" " + str1.charAt(j));
+                        break;
                     }
                     j++;
-                }
-                return true;
-            }
+                    if (j == str1.length()) {
+                        break;
+                    }
+                    if (i == str2.length()-1){
+                        return true;
+                    }
+                }               
+            }  
         }
         return false;
     }
